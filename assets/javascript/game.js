@@ -5,17 +5,15 @@ var numGuesses = 9;
 var lettersGuessed = [];
 
 var compLetter = letters[Math.floor(Math.random()*letters.length)];
-console.log(compLetter);
 
 document.onkeyup = function game() {
 
     var guess = event.key;
     
-    if (guess >= "a" && guess <= "z") {
+    if (guess >= 'a' && guess <= 'z') {
         
-        if (guess == compLetter) {
+        if (guess === compLetter) {
             wins++;
-            console.log(wins);
             document.getElementById("wins").innerHTML = "Wins: " + wins;
             numGuesses = 9;
             document.getElementById("guesses").innerHTML = "Remaining Guesses: " + numGuesses;
