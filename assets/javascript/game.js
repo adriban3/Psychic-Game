@@ -4,11 +4,10 @@ var losses = 0;
 var numGuesses = 9;
 var lettersGuessed = [];
 
-document.onkeyup = game;
-
-function game() {
+document.onkeyup = function game() {
     var compLetter = letters[Math.floor(Math.random()*letters.length)];
     console.log(compLetter);
+
     var key = String.fromCharCode(event.keyCode).toLowerCase();
     
     if (key > "a" && key < "z") {
