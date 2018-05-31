@@ -7,7 +7,7 @@ var lettersGuessed = [];
 document.onkeyup = game;
 
 function game() {
-    var compLetter = letters[Math.floor((Math.random()*letters.length) + 1)];
+    var compLetter = letters[Math.floor(Math.random()*letters.length)];
     console.log(compLetter);
     var key = String.fromCharCode(event.keyCode).toLowerCase();
     
