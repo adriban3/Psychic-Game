@@ -8,11 +8,11 @@ document.onkeyup = function game() {
     var compLetter = letters[Math.floor(Math.random()*letters.length)];
     console.log(compLetter);
 
-    var key = String.fromCharCode(event.keyCode).toLowerCase();
+    var guess = event.key;
     
-    if (key > "a" && key < "z") {
+    if (guess > "a" && guess < "z") {
         
-        if (key === compLetter) {
+        if (guess === compLetter) {
             wins++;
             document.getElementById("wins").innerHTML = "Wins: " + wins;
             numGuesses = 9;
@@ -24,7 +24,7 @@ document.onkeyup = function game() {
         else {
             numGuesses--;
             document.getElementById("guesses").innerHTML = "Remaining Guesses: " + numGuesses;
-            lettersGuessed.push(key);
+            lettersGuessed.push(guess);
             document.getElementById("letters").innerHTML = "Letters Guessed: " + lettersGuessed;
 
             if (numGuesses < 1) {
